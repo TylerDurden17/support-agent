@@ -1,0 +1,14 @@
+Q: I forgot my password. How do I reset it?
+A: Click "Forgot Password" on the login page and follow the email link to reset it. The link expires in 15 minutes.
+
+Q: I want to delete my account permanently.
+A: To permanently delete your account, go to Settings > Privacy > Delete Account. This action cannot be undone.
+
+Q: How do I change my profile photo?
+A: Navigate to your profile, click on the avatar, and upload a new image (JPEG/PNG under 5MB).
+
+Q: I didn’t receive the email verification link.
+A: Check your spam folder. If it’s not there, click "Resend verification" on the login page.
+
+Q: Can I merge two accounts?
+A: Account merging is not currently supported. You can manually transfer data by exporting and importing between accounts.

@@ -1,0 +1,14 @@
+Q: The app crashes when I upload a file. What should I do?
+A: Try clearing the app cache and reinstalling. If the issue persists, send us a screen recording and your device details.
+
+Q: I’m getting a 500 error when logging in.
+A: This is likely a temporary server issue. Please try again in a few minutes. If it continues, report it with your browser and timestamp.
+
+Q: I can’t download files from my dashboard.
+A: Check your internet connection and disable any ad blockers. If the problem persists, try a different browser.
+
+Q: The notification sound isn’t working.
+A: Ensure sound is enabled in your system and app settings. Also, check your device’s "Do Not Disturb" mode.
+
+Q: I get logged out automatically every few hours.
+A: For security, we log users out after 12 hours of inactivity. Enable "Keep me signed in" if supported.

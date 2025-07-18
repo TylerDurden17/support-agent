@@ -1,0 +1,15 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment variable files
+.env
+
+# Ignore Chroma DB and other local caches
+chroma_db/
+
+# Ignore VSCode settings (optional)
+.vscode/

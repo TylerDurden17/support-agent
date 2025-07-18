@@ -1,0 +1,14 @@
+Q: Do you support regional languages?
+A: Currently, we support English. We're working on expanding to Hindi, Spanish, and more based on demand.
+
+Q: Can I request a new feature?
+A: Yes! Submit feature requests via our Feedback Form found in the Help Center.
+
+Q: How do I contact support?
+A: Use the in-app chat or email support@example.com. We typically respond within 24 hours.
+
+Q: Is there a mobile app?
+A: Yes, our app is available on iOS and Android. Search for "SupportApp" in your app store.
+
+Q: I love the new UI! How can I share feedback?
+A: Thank you! You can leave feedback via the "Give Feedback" button in the bottom-right corner of the dashboard.
