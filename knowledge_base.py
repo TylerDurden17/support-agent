@@ -7,6 +7,21 @@
 # You'd have a web server that loads once and stays running:
 
 # Import libraries we need
+import os
+import sys
+
+# Fix ChromaDB on Streamlit Cloud
+os.environ["ALLOW_RESET"] = "TRUE"
+os.environ["ANONYMIZED_TELEMETRY"] = "FALSE"
+os.environ["CHROMA_SERVER_NOFILE"] = "65535"
+
+# Suppress ChromaDB warnings
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="chromadb")
+
+# Fix SQLite threading issues
+import sqlite3
+sqlite3.threadsafety = 1
 from langchain_community.document_loaders import DirectoryLoader, TextLoader  # To read text files from folders
 from langchain.text_splitter import RecursiveCharacterTextSplitter  # To break long documents into smaller chunks
 from langchain_huggingface import HuggingFaceEmbeddings  # To convert text into numbers (embeddings)
