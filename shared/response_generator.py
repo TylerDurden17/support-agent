@@ -1,8 +1,8 @@
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from knowledge_base import KnowledgeBase
-from ticket_classifier import create_classifier
+from shared.knowledge_base import KnowledgeBase
+from shared.ticket_classifier import create_classifier
 import os
 from dotenv import load_dotenv
 
