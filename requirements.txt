@@ -7,3 +7,4 @@ sentence-transformers
 chromadb==0.4.13
 pydantic
 python-dotenv
+pysqlite3-binary

@@ -7,6 +7,7 @@
 # You'd have a web server that loads once and stays running:
 
 # Import libraries we need
+
 import os
 import sys
 
@@ -27,7 +28,29 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter  # To break l
 from langchain_huggingface import HuggingFaceEmbeddings  # To convert text into numbers (embeddings)
 from langchain_chroma import Chroma  # Our "smart database" for storing and searching embeddings
 import os
+# Fix SQLite version for ChromaDB on Streamlit Cloud
+import sys
+import os
 
+def fix_sqlite():
+    try:
+        # Try to import and use pysqlite3 if available
+        import pysqlite3
+        sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+    except ImportError:
+        # If not available, try to install it
+        try:
+            import subprocess
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "pysqlite3-binary"])
+            import pysqlite3
+            sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+        except:
+            # If all else fails, use DuckDB backend
+            os.environ["CHROMA_DB_IMPL"] = "duckdb+parquet"
+            pass
+
+# Apply the fix
+fix_sqlite()
 class KnowledgeBase:
     def __init__(self, persist_directory="./chroma_db"):
         # persist_directory = where we save our database on the computer
