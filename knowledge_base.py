@@ -1,7 +1,3 @@
-# The classification ensures your AI follows company policies consistently, 
-# not just whatever feels right to the model in that moment. 
-# It's the difference between "smart but unpredictable" and "smart and reliable."
-
 # This code creates a "smart search system" that understands meaning, not just keywords. 
 # When someone asks about "stopping their plan," it knows to look for "cancellation" info because 
 # it learned that these phrases mean similar things!
