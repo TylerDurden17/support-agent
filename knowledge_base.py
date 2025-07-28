@@ -1,3 +1,7 @@
+# The classification ensures your AI follows company policies consistently, 
+# not just whatever feels right to the model in that moment. 
+# It's the difference between "smart but unpredictable" and "smart and reliable."
+
 # This code creates a "smart search system" that understands meaning, not just keywords. 
 # When someone asks about "stopping their plan," it knows to look for "cancellation" info because 
 # it learned that these phrases mean similar things!
@@ -30,18 +34,17 @@ class KnowledgeBase:
         self.vectorstore = None
         
     def load_documents(self, docs_path="./support_docs"):
-        # Step 1: Read all .txt files from the support_docs folder
         loader = DirectoryLoader(docs_path, glob="*.txt", loader_cls=TextLoader)
-        documents = loader.load()  # Now we have a list of documents
+        documents = loader.load()
         
-        # Step 2: Break big documents into smaller, searchable chunks
-        # Why? Because AI works better with smaller pieces of text
+        # Fix the problem ONCE during ingestion, not every query
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=500,    # Each chunk is max 500 characters (about 1-2 paragraphs)
-            chunk_overlap=50   # Overlap by 50 chars so we don't cut sentences in weird places
+            chunk_size=800,    # Hard limit - guaranteed to fit in LLM context
+            chunk_overlap=100, # Overlap to prevent cutting important info
+            length_function=len
         )
         splits = text_splitter.split_documents(documents)
-        return splits  # Return list of small document chunks
+        return splits
         
     def create_vectorstore(self, documents):
         # This is where the magic happens!
